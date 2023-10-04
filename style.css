@@ -1,0 +1,23 @@
+.calculator {
+	width: 500px;
+	margin: auto;
+	height: 800px;
+
+}
+#screen {
+	height: 50px;
+	width: 500px;
+	border: 1px solid black;
+}
+
+.btn {
+	height: 40px;
+	width: 40px;
+	border-radius: 50px;
+	background-color: gray;
+	color: white;
+}
+.numbers-column {
+	display: flex;
+	flex-direction: wrap;
+}
