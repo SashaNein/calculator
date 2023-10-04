@@ -6,7 +6,7 @@ let temporaryData = '';
 const numberButtons = document.querySelectorAll('.numbers');
 const operators = document.querySelectorAll('.operator')
 const equalButton = document.getElementById('equals');
-const deleteButton = document.getElementById('delete');
+const deleteButton = document.getElementById('deleteBtn');
 const clearButton = document.getElementById('clear');
 const addPoint = document.getElementById('point');
 const currentThing = document.getElementById('currentThing')
@@ -29,6 +29,7 @@ operators.forEach((button) =>
 
 
 function appendNumber(number) {
+lastThing.textContent = '';
 currentThing.textContent+=number;
 console.log(currentThing.textContent);
 }
@@ -50,35 +51,38 @@ function operate() {
 	case '+': 
 		lastThing.textContent = add(num1, num2);
 		temporaryData = lastThing.textContent;
-		console.log(firstNumber);
-		console.log(secondNumber);
 		break;
 	case '-':
 		lastThing.textContent = subtract(num1, num2);
 		temporaryData = lastThing.textContent;
 		break;
-	case '*':
+	case 'x':
 		lastThing.textContent = multiply(num1, num2);
 		temporaryData = lastThing.textContent;
+		break;
 	case '/':
 		lastThing.textContent = divide(num1, num2);
 		temporaryData = lastThing.textContent;
+		break;
+	case 'AC':
+		clearScreen();
+		break;
 	}
 
 }
 
-function storeData() {
- 
 
-
-}
 
 function deleteNumber() {
-
+	currentThing.textContent = currentThing.textContent.slice(0,-1);
 }
 
 function clearScreen() {
-
+lastThing.textContent = '0';
+firstNumber = '';
+secondNumber = ''; 
+currentOperator = '';
+temporaryData = '';
 }
 function appendPoint() {
 
